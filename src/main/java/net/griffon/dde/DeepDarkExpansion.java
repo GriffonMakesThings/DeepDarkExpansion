@@ -1,6 +1,7 @@
 package net.griffon.dde;
 
 import com.mojang.logging.LogUtils;
+import net.griffon.dde.item.ModItems;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -19,6 +20,8 @@ public class DeepDarkExpansion
     private static final Logger LOGGER = LogUtils.getLogger();
     public DeepDarkExpansion() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModItems.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
