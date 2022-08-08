@@ -1,7 +1,6 @@
 package net.griffon.dde;
 
 import com.mojang.logging.LogUtils;
-import net.griffon.dde.item.ModItems;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -15,13 +14,12 @@ import org.slf4j.Logger;
 @Mod(DeepDarkExpansion.MOD_ID)
 public class DeepDarkExpansion
 {
-
+    // Define mod id in a common place for everything to reference
     public static final String MOD_ID = "dde";
+    // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
     public DeepDarkExpansion() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-
-        ModItems.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
